@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# Clean Architecture Explinations
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Folder Structure
 
-## Available Scripts
+### Api
 
-In the project directory, you can run:
+First, we have the api folder, which will contain the API Layer of our application. It will have methods
+that are responsible for performing API requests and communicating with a server.
 
-### `npm start`
+### Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The only initial directory in this example is common . The common directory will contain any reusable
+components that are commonly used throughout the application. For instance, buttons, form components,
+components related to typography, and so on. Any components that are not as common would be placed
+inside of components but outside of the common directory
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### hooks
 
-### `npm test`
+would hold any custom and reusable hooks. Note that any hooks that are not really reusable, but are 
+coupled to a specific feature, should be placed in the same directory as that feature. For instance, 
+imagine we have a newsletter form component that contains a form to sign up a user for a newsletter. 
+This component could utilise a hook called useNewsletterSignup that would handle signing up a user. 
+A hook like this shouldn’t be placed in the global src/hooks directory, but rather locally, as it 
+is coupled to the NewsletterForm component. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Here’s what it couldlook like:
 
-### `npm run build`
+```
+src
+  |-- hooks
+  |-- components
+    |-- common
+    |-- NewsletterForm
+      |-- hooks
+        |-- useNewsletterSignup.ts
+      |-- NewsletterForm.tsx
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Context
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The context directory should contain any global-level context state providers. 
 
-### `npm run eject`
+### Constants
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Here you can put any constant variables that are used throughout the application. It’s a good practice
+to capitalise your constants to distinguish them from other variables and localised constants in your app.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### helpers
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Any utilities and small reusable functions should go here - for example, functions to format date, time,etc.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Services
 
-## Learn More
+In larger applications, we might have complex business logic code that is used in a few different places.
+A code like this is a good candidate to be extracted from components and placed somewhere else, and
+the services folder is a good candidate for that.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### store
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The store folder is responsible for files related to global state management. There are many state
+management solutions that can be used for React projects, such as Redux, Zustand, Jotai, and many
+many more
+
+### Views
+
+Read page 28 to 32 from React - The road to enterprise
