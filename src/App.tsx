@@ -1,10 +1,10 @@
-import React from 'react';
+import Characters from './components/characters/Characters';
 
 function App() {
   return (
-    <div className="App">
+    <div style={{padding: "5rem"}}>
       <header className="App-header">
-       <p>Hola</p>
+        <Characters />
       </header>
     </div>
   );

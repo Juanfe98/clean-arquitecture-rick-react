@@ -1,10 +1,11 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 
 // Default config for the axios instance
+console.log("🚀 ~ file: api.ts ~ line 8 ~ process.env.NODE_ENV", process.env.NODE_ENV);
 const axiosParams = {
   // Set different base URL based on the environment
   baseURL:
-    process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : '/',
+    process.env.NODE_ENV === 'development' ? 'https://rickandmortyapi.com/api' : '/',
 }
 
 // Create axios instance with default params
