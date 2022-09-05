@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { Ref, forwardRef } from 'react';
+import { DynamicRefForwardingComponent } from '@/helpers/types';
 
 const Colors = {
   inherit: '',
@@ -127,7 +128,6 @@ export const useTextStyleProps = <
   return props as any;
 };
 
-// @ts-ignore
 const Text: DynamicRefForwardingComponent<'span', TextProps> = forwardRef(
   (
     {
@@ -149,7 +149,6 @@ const Text: DynamicRefForwardingComponent<'span', TextProps> = forwardRef(
       truncate,
       transform,
     });
-    console.log("🚀 ~ file: Text.tsx ~ line 152 ~ textClasses", textClasses);
 
     return (
       <Tag ref={ref} className={clsx(className, textClasses)} {...props} />
