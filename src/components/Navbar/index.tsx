@@ -1,43 +1,23 @@
-import useToggler from '@/hooks/useToggler'
-import { useMemo } from 'react'
-import If from '../common/If'
 import NavbarBody from './components/NavbarBody'
+import NavbarLogo from './components/NavbarLogo'
 import NavbarButton from './components/NavbarButton'
 import NavbarMobileMenu from './components/NavbarMobileMenu'
-import { NavbarContext } from './context'
+import NavbarMenuItems from './components/NavbarMenuItems'
+import NavbarMenu from './components/NavbarMenu'
 
 interface Props {
   children: React.ReactNode[] | React.ReactNode
 }
 
 const Navbar = ({ children }: Props) => {
-  const [showMobileMenu, toggleShowMobileMenu] = useToggler(false)
-
-  /**
-   * Memoize the context to prevent unecessary renders.
-   */
-  const memoizedContextValue = useMemo(
-    () => ({
-      showMobileMenu,
-      toggleShowMobileMenu,
-    }),
-    [showMobileMenu, toggleShowMobileMenu]
-  )
-
-  return (
-    <NavbarContext.Provider value={memoizedContextValue}>
-      <nav className="bg-gray-800">
-        {children}
-        <If condition={showMobileMenu}>
-          <NavbarMobileMenu />
-        </If>
-      </nav>
-    </NavbarContext.Provider>
-  )
+  return <nav className="bg-gray-800">{children}</nav>
 }
 
 export default Object.assign(Navbar, {
   Body: NavbarBody,
+  Logo: NavbarLogo,
+  Menu: NavbarMenu,
   Button: NavbarButton,
   MobileMenu: NavbarMobileMenu,
+  MenuItems: NavbarMenuItems,
 })

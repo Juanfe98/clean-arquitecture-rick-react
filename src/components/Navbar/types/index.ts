@@ -1,4 +1,6 @@
 export interface NavbarContextInterface {
-  showMobileMenu: Boolean;
-  toggleShowMobileMenu: () => void;
+  showMobileMenu: Boolean
+  showPopupMenu: Boolean
+  toggleShowMobileMenu: () => void
+  toggleShowPopupMenu: () => void
 }

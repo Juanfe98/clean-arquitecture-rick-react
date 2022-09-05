@@ -1,16 +1,13 @@
-import Characters from './components/Characters/Characters';
-import CharacterWithUseApi from './components/Characters/CharactersWithUseApi';
+import FullNavbar from './components/Navbar/FullNavbar'
 
 function App() {
   return (
-    <div style={{padding: "5rem"}}>
-      <header className="App-header">
-        <Characters />
-        <hr />
-        <CharacterWithUseApi />
-      </header>
-    </div>
-  );
+    <>
+      <FullNavbar />
+      <div className="container mx-auto mt-10">
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
