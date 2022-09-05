@@ -1,23 +1,21 @@
 import clsx from 'clsx'
-import React, { ReactElement } from 'react'
-import { useNavbarContext } from '../Navbar/hooks/useNavbarContext'
+import { ReactElement } from 'react'
 
 interface Props {
   className?: String
-  children: ReactElement | ReactElement[]
+  children: ReactElement | ReactElement[];
+  onClick: () => void;
 }
 
-const Button = ({ className, children, ...props }: Props) => {
-  const { toggleShowMobileMenu } = useNavbarContext()
+const Button = ({ className, children, onClick, ...props }: Props) => {
 
-  const defaultClasses =
-    'inline-flex items-center justify-center rounded-md p-2'
+  const defaultClasses = 'inline-flex items-center justify-center';
 
   return (
     <button
       type="button"
       className={clsx(defaultClasses, className)}
-      onClick={() => toggleShowMobileMenu()}
+      onClick={onClick}
       {...props}
     >
       {children}
