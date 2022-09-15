@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-import { fetchAllCharacters } from '../../api/characters/characters'
-import { CharacterData } from '../../api/characters/character_types'
-import { ERROR, IDLE, PENDING, SUCCESS } from '../../api/constants/apiStatus'
-import { useApiStatus } from '../../api/hooks/useApiStatus'
-import { withAsync } from '@/helpers/withAsync'
+import { fetchAllCharacters } from '../../api/characters/characters';
+import { CharacterData } from '../../api/characters/character_types';
+import { ERROR, IDLE, PENDING, SUCCESS } from '../../api/constants/apiStatus';
+import { useApiStatus } from '../../api/hooks/useApiStatus';
+import { withAsync } from '@/helpers/withAsync';
+import LazySpinner from '../common/LazySpinner';
 
 const useFetchAllCharacters = () => {
   const [characters, setCharacters] = useState<CharacterData[]>()
@@ -56,10 +57,11 @@ const Characters = () => {
 
   return (
     <>
-      <span>Character's Page</span>
+      <span className="text-lg">Character's Page</span>
       {isFetchAllCharactersError && 'Error fetching characters'}
       {isFetchAllCharactersPending && 'Pending fetching characters'}
       {isFetchAllCharactersSuccess && <span>{JSON.stringify(characters)}</span>}
+      {/* {isFetchAllCharactersSuccess && <LazySpinner show={true} />} */}
     </>
   )
 }

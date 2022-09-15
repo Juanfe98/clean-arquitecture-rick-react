@@ -15,13 +15,13 @@ const If = ({
 }: Props) => {
   if (condition) {
     if (children) {
-      return <Fragment>{children}</Fragment>
+      return <>{children}</>
     } else {
-      return <Fragment>{Then}</Fragment>
+      return <>{Then}</>
     }
   } else {
     if (Else) {
-      return <Fragment>{Else}</Fragment>
+      return <>{Else}</>
     }
     return null
   }
