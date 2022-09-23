@@ -1,4 +1,6 @@
 module.exports = {
+  arrowParens: 'avoid',
+  bracketSpacing: true,
   endOfLine: 'lf',
   jsxBracketSameLine: false,
   printWidth: 80,
@@ -8,7 +10,7 @@ module.exports = {
   singleQuote: true,
   jsxSingleQuote: false,
   tabWidth: 2,
-  trailingComma: 'es5',
+  trailingComma: 'none',
   useTabs: false,
   vueIndentScriptAndStyle: false,
 };                                                                                                                    

@@ -17,7 +17,7 @@ const FullNavbar = () => {
       showMobileMenu,
       showPopupMenu,
       toggleShowMobileMenu,
-      toggleShowPopupMenu,
+      toggleShowPopupMenu
     }),
     [showMobileMenu, toggleShowMobileMenu, showPopupMenu, toggleShowPopupMenu]
   )
