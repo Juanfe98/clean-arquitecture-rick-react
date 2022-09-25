@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/clean-arquitecture-rick-react/static/css/main.232b13af.css",
+    "main.js": "/clean-arquitecture-rick-react/static/js/main.0b069132.js",
+    "index.html": "/clean-arquitecture-rick-react/index.html",
+    "main.232b13af.css.map": "/clean-arquitecture-rick-react/static/css/main.232b13af.css.map",
+    "main.0b069132.js.map": "/clean-arquitecture-rick-react/static/js/main.0b069132.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.232b13af.css",
+    "static/js/main.0b069132.js"
+  ]
+}
