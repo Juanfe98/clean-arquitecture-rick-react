@@ -1,6 +1,7 @@
 {
   "name": "rick-morty-clean-react",
   "version": "0.1.0",
+  "homepage": "https://Juanfe98.github.io/clean-arquitecture-rick-react",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.5",
@@ -23,7 +24,9 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test:unit": "craco test"
+    "test:unit": "craco test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint",
@@ -49,6 +52,7 @@
   },
   "devDependencies": {
     "craco-alias": "^3.0.1",
+    "gh-pages": "^4.0.0",
     "tailwindcss": "^3.1.8"
   }
 }
