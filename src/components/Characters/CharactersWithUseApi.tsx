@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 
-import { fetchAllCharacters } from '../../api/characters/characters';
+import { fetchAllCharacters } from '../../api/characters/characters_api';
 import { useApi } from '../../api/hooks/useApi';
 
 

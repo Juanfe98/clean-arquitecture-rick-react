@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { fetchAllCharacters } from '../../api/characters/characters';
+import { fetchAllCharacters } from '../../api/characters/characters_api';
 import { CharacterData } from '../../api/characters/character_types';
 import { ERROR, IDLE, PENDING, SUCCESS } from '../../api/constants/apiStatus';
 import { useApiStatus } from '../../api/hooks/useApiStatus';
@@ -27,7 +27,7 @@ const useFetchAllCharacters = () => {
       setFetchAllCharactersStatus(ERROR)
     } else {
       setFetchAllCharactersStatus(SUCCESS)
-      setCharacters(response?.data.results)
+      setCharacters(response?.results)
     }
   }, [setFetchAllCharactersStatus])
 

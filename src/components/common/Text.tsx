@@ -4,7 +4,7 @@ import { DynamicRefForwardingComponent } from '@/helpers/types';
 
 const Colors = {
   inherit: '',
-  body: 'text-black',
+  body: 'text-white',
   headline: 'text-gray-500',
   subtitle: 'text-gray-300',
   primary: 'text-primary',
@@ -26,6 +26,8 @@ const Variants = {
   'body-bold': 'text-base font-extrabold',
   lg: 'text-lg',
   xl: 'text-xl',
+  '2xl': 'text-2xl',
+  '3xl': 'text-3xl',
   'display-sm': 'text-display-sm',
   'display-md': 'text-display-md',
   'display-lg': 'text-display-lg',
@@ -75,6 +77,8 @@ export interface TextStyleOptions {
     | 'body-bold'
     | 'lg'
     | 'xl'
+    | '2xl'
+    | '3xl'
     | 'display-sm'
     | 'display-md'
     | 'display-lg'
